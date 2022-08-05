@@ -25,7 +25,7 @@ async def hagadmansa(bot, message):
             InlineKeyboardButton('Support', url='https://t.me/hagadmansachat')
             ],[
             InlineKeyboardButton('Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('Source', url='https://hagadmansa/FileStoreBot')
+            InlineKeyboardButton('Source', url='https://github.com/hagadmansa/FileStoreBot')
             ]])
         )
   hagadmansa = await message.reply("`Processing...`")
@@ -50,7 +50,7 @@ async def start(bot, message):
             InlineKeyboardButton('Support', url='https://t.me/hagadmansachat')
             ],[
             InlineKeyboardButton('Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('Source', url='https://hagadmansa/FileStoreBot')
+            InlineKeyboardButton('Source', url='https://github.com/hagadmansa/FileStoreBot')
             ]])
         )
     elif len(message.command) == 2:
@@ -76,7 +76,7 @@ async def start(bot, message):
             InlineKeyboardButton('Support', url='https://t.me/hagadmansachat')
             ],[
             InlineKeyboardButton('Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('Source', url='https://hagadmansa/FileStoreBot')
+            InlineKeyboardButton('Source', url='https://github.com/hagadmansa/FileStoreBot')
             ]])
         )
       

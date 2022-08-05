@@ -1,5 +1,6 @@
 import os
 from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 API_ID = int(os.environ.get("API_ID"))
@@ -15,6 +16,8 @@ Bot = Client(
 
 @Bot.on_message(filters.private)
 async def hagadmansa(bot, message):
+    if message.text:
+        return
   hagadmansa = await message.reply("`Processing...`")
   media = message.photo or message.video or message.voice or message.document or message.animation or message.audio or message.sticker 
   link = f"https://t.me/{BOT_USERNAME}?start={media.file_id}"

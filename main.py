@@ -13,7 +13,7 @@ Bot = Client(
     api_hash=API_HASH
 )
 
-@Client.on_message(filters.private & (filters.photo & filters.video & filters.voice & filters.document & filters.animation & filters.audio & filters.sticker))
+@Bot.on_message(filters.private & (filters.photo & filters.video & filters.voice & filters.document & filters.animation & filters.audio & filters.sticker))
 async def hagadmansa(bot, message):
   hagadmansa = await message.reply("`Processing...`")
   media = message.photo or message.video or message.voice or message.document or message.animation or message.audio or message.sticker 
@@ -26,7 +26,7 @@ async def hagadmansa(bot, message):
             InlineKeyboardButton('Share now', url=share)
         ]])
   )
-@Client.on_message(filters.command('start'))
+@Bot.on_message(filters.command('start'))
 async def start(bot, message):
     await message.reply('Hello')
     

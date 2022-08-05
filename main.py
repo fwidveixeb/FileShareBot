@@ -26,5 +26,8 @@ async def hagadmansa(bot, message):
             InlineKeyboardButton('Share now', url=share)
         ]])
   )
-
+@Client.on_message(filters.command('start'))
+async def start(bot, message):
+    await message.reply('Hello')
+    
 Bot.run()

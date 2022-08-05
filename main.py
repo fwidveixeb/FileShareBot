@@ -17,17 +17,7 @@ Bot = Client(
 @Bot.on_message(filters.private)
 async def hagadmansa(bot, message):
   if message.text:
-      return await message.reply(
-            text=f"Hello {message.from_user.mention}, I am a Powerful File Store Bot devoloped by @Hagadmansa.\n\nJust send me any photo, video, voice, audio, document, sticker, animation or videonote, i'll share you you it's permanent link.",
-            reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('Updates', url='https://t.me/hagadmansa'),
-            InlineKeyboardButton('Support', url='https://t.me/hagadmansachat')
-            ],[
-            InlineKeyboardButton('Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('Source', url='https://github.com/hagadmansa/FileStoreBot')
-            ]])
-        )
+      return 
   hagadmansa = await message.reply("`Processing...`")
   media = message.photo or message.video or message.voice or message.document or message.animation or message.audio or message.sticker or message.VideoNote
   link = f"https://t.me/{BOT_USERNAME}?start={media.file_id}"

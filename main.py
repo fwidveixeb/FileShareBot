@@ -41,19 +41,6 @@ async def hagadmansa(bot, message):
   )
 @Bot.on_message(filters.command('start'))
 async def start(bot, message):
-    if len(message.command) == 1:
-        await message.reply(
-            text=f"Hello {message.from_user.mention}, I am a Powerful File Store Bot devoloped by @Hagadmansa.\n\nJust send me any photo, video, voice, audio, document, sticker, animation or videonote, i'll share you you it's permanent link.",
-            reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('Updates', url='https://t.me/hagadmansa'),
-            InlineKeyboardButton('Support', url='https://t.me/hagadmansachat')
-            ],[
-            InlineKeyboardButton('Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('Source', url='https://github.com/hagadmansa/FileStoreBot')
-            ]])
-        )
-    elif len(message.command) == 2:
         try:
             link = f"https://t.me/{BOT_USERNAME}?start={message.command[1]}"
             share = f"https://t.me/share/url?url={link}&text=Click%20on%20link%20to%20get%20the%20file%20now,%20Join%20@Hagadmansa"

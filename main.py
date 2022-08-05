@@ -67,18 +67,5 @@ async def start(bot, message):
             )
         except:
             await message.reply('The media you are trying to send is invalid.')
-    else:
-        await message.reply(
-            text=f"Hello {message.from_user.mention}, I am a Powerful File Store Bot devoloped by @Hagadmansa.\n\nJust send me any photo, video, voice, audio, document, sticker, animation or videonote, i'll share you you it's permanent link.",
-            reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('Updates', url='https://t.me/hagadmansa'),
-            InlineKeyboardButton('Support', url='https://t.me/hagadmansachat')
-            ],[
-            InlineKeyboardButton('Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('Source', url='https://github.com/hagadmansa/FileStoreBot')
-            ]])
-        )
-      
-                
+    
 Bot.run()

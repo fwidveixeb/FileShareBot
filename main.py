@@ -58,7 +58,7 @@ async def start(bot, message):
         except:
             await message.reply('The media you are trying to send is invalid.')
 
-Bot.on_message(filters.command('hello'))
+@Bot.on_message(filters.command('hello'))
 async def start(bot, message):
     await message.reply('hello')
     

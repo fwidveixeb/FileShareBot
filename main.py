@@ -28,6 +28,6 @@ async def hagadmansa(bot, message):
   )
 @Bot.on_message(filters.command('start'))
 async def start(bot, message):
-    await message.reply('Hello')
+    await message.reply('Hello Ji')
     
 Bot.run()

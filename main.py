@@ -25,5 +25,6 @@ async def hagadmansa(bot, message):
         [[
             InlineKeyboardButton('Share now', url=share)
         ]])
+  )
 
 Bot.run()

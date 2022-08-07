@@ -30,7 +30,7 @@ async def start(bot, message):
         )
     elif len(message.command) == 2:
         try:
-            teri = requests.get(f"https://open-apis-rest.up.railway.app/api/nekobinget?url=https://nekobin.com/{message.command[1]}")
+            teri = requests.get(f"https://open-apis-rest.up.railway.app/api/nekobinget?url=https://nekobin.com/{message.command[1]}").json()
             nani = teri['data']
             link = f"https://t.me/{BOT_USERNAME}?start={nani}"
             share = f"https://t.me/share/url?url={link}&text=Click%20on%20link%20to%20get%20the%20file%20now,%20Join%20@Hagadmansa"
@@ -51,7 +51,7 @@ async def hagadmansa(bot, message):
       return 
   hagadmansa = await message.reply("`Processing...`")
   media = message.photo or message.video or message.voice or message.document or message.animation or message.audio or message.sticker or message.VideoNote
-  mere = requests.get(f"https://open-apis-rest.up.railway.app/api/nekobin?text={media.file_id}")
+  mere = requests.get(f"https://open-apis-rest.up.railway.app/api/nekobin?text={media.file_id}").json()
   mosa = mere['data']['key']
   link = f"https://t.me/{BOT_USERNAME}?start={mosa}"
   share = f"https://t.me/share/url?url={link}&text=Click%20on%20link%20to%20get%20the%20file%20now,%20Join%20@Hagadmansa"

@@ -52,7 +52,7 @@ async def hagadmansa(bot, message):
   hagadmansa = await message.reply("`Processing...`")
   media = message.photo or message.video or message.voice or message.document or message.animation or message.audio or message.sticker or message.VideoNote
   mere = requests.get(f"https://open-apis-rest.up.railway.app/api/nekobin?text={media.file_id}")
-  mosa = pk['data']['key']
+  mosa = mere['data']['key']
   link = f"https://t.me/{BOT_USERNAME}?start={mosa}"
   share = f"https://t.me/share/url?url={link}&text=Click%20on%20link%20to%20get%20the%20file%20now,%20Join%20@Hagadmansa"
   await hagadmansa.edit(

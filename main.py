@@ -1,4 +1,5 @@
 import os
+import requests
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -29,10 +30,12 @@ async def start(bot, message):
         )
     elif len(message.command) == 2:
         try:
-            link = f"https://t.me/{BOT_USERNAME}?start={message.command[1]}"
+            teri = requests.get(f"https://open-apis-rest.up.railway.app/api/nekobinget?url=https://nekobin.com/{message.command[1]}")
+            nani = teri['data']
+            link = f"https://t.me/{BOT_USERNAME}?start={nani}"
             share = f"https://t.me/share/url?url={link}&text=Click%20on%20link%20to%20get%20the%20file%20now,%20Join%20@Hagadmansa"
             await message.reply_cached_media(
-                file_id=message.command[1],
+                file_id=nani,
                 caption='Join @Hagadmansa',
                 reply_markup=InlineKeyboardMarkup(
                 [[
@@ -48,7 +51,9 @@ async def hagadmansa(bot, message):
       return 
   hagadmansa = await message.reply("`Processing...`")
   media = message.photo or message.video or message.voice or message.document or message.animation or message.audio or message.sticker or message.VideoNote
-  link = f"https://t.me/{BOT_USERNAME}?start={media.file_id}"
+  mere = requests.get(f"https://open-apis-rest.up.railway.app/api/nekobin?text={media.file_id}")
+  mosa = pk['data']['key']
+  link = f"https://t.me/{BOT_USERNAME}?start={mosa}"
   share = f"https://t.me/share/url?url={link}&text=Click%20on%20link%20to%20get%20the%20file%20now,%20Join%20@Hagadmansa"
   await hagadmansa.edit(
     text=f"Here is your link: {link}",
